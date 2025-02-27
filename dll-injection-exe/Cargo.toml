@@ -1,0 +1,22 @@
+[package]
+name = "dll-injection"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+clap = { version = "4.0", features = ["derive"]}
+[dependencies.windows]
+version = "0.58.0"
+features = [
+    "Data_Xml_Dom",
+    "Win32_System_Memory",
+    "Win32_System_Threading",
+    "Win32_System_LibraryLoader",
+    "Win32_System_Diagnostics_Debug",
+    "Win32_System_StationsAndDesktops",
+    "Win32_Foundation",
+    "Win32_Security",
+    "Win32_UI_WindowsAndMessaging",
+    "Win32_Storage_Xps",
+    "Win32_Graphics_Gdi",
+]

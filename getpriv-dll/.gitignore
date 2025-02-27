@@ -1,0 +1,29 @@
+# Compiled files
+*.o
+*.so
+*.dylib
+*.dll
+*.exe
+
+# Rust specific
+target/
+Cargo.lock
+
+# IDE and editor files
+.idea/
+.vscode/
+*.iml
+
+# Debugging files
+*.log
+*.dbg
+*.dmp
+
+# macOS specific
+.DS_Store
+
+# Windows specific
+Thumbs.db
+
+# Misc
+getpriv-dll.log
