@@ -17,7 +17,7 @@ Each sub-folder contains a standalone Rust application.
 
 Every application is documented with its own `README.md` detailing its function and usage.
 
-## Disclaimer
+## 🏴‍☠️ Ethical Considerations
 
 These applications are intended for research, educational, and testing purposes only.
 Use them responsibly and ensure compliance with legal and ethical guidelines.

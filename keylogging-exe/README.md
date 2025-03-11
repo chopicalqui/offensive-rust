@@ -12,7 +12,7 @@ Rust application that implements a basic keylogger.
     cargo build --release
     ```
 
-2. Run the compiled DLL via command:
+2. Run the compiled application via command:
 
     ```shell
     cargo run -- --file output.txt
