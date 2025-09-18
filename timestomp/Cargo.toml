@@ -1,0 +1,15 @@
+[package]
+name = "timestomp"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+clap = { version = "4.0", features = ["derive"] }
+chrono = "0.4"
+rand = "0.8"
+
+[target.'cfg(windows)'.dependencies]
+winapi = { version = "0.3", features = ["fileapi", "handleapi", "winnt", "minwindef", "errhandlingapi"] }
+
+[target.'cfg(not(windows))'.dependencies]
+libc = "0.2"

@@ -32,7 +32,7 @@ pub extern "system" fn ScreenCapture(_: isize, _: HINSTANCE, path: *const u8, _:
     unsafe {
         if ! path.is_null() {
             let output_path = Path::new(CStr::from_ptr(path as *const i8).to_str().unwrap_or("%TEMP%"));
-            continuous_screen_capture(&output_path);
+            continuous_screen_capture(&output_path, 1000, true);
         }
     };
 }

@@ -143,10 +143,15 @@ pub unsafe fn capture_screen(file_name: &str) {
 ///
 /// # Arguments
 /// * `output_dir` - The directory where screenshots will be saved.
-pub unsafe fn continuous_screen_capture(output_dir: &Path) {
+pub unsafe fn continuous_screen_capture(output_dir: &Path, frequency: u64, timestamp: bool) {
+    let mut i: u64 = 1;
     loop {
         // Generate timestamped filename
-        let timestamp = Local::now().format("%Y%m%d-%H%M%S").to_string();
+        let timestamp = if timestamp {
+            Local::now().format("%Y%m%d-%H%M%S-%3f").to_string()
+        } else {
+            format!("{:05}", i)
+        };
         let filename = output_dir.join(format!("{}.bmp", timestamp)).display().to_string();
 
         // Capture the screenshot
@@ -157,6 +162,7 @@ pub unsafe fn continuous_screen_capture(output_dir: &Path) {
         println!("Screenshot saved to {}", filename);
 
         // Wait 1 second before taking the next screenshot
-        sleep(Duration::from_secs(1));
+        sleep(Duration::from_millis(frequency));
+        i = i + 1;
     }
 }

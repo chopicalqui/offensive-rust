@@ -1,0 +1,16 @@
+[package]
+name = "dns-exfil"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "dns-exfil"
+crate-type = ["cdylib"]
+
+[[bin]]
+name = "dns-exfil"
+path = "src/main.rs"
+
+[dependencies]
+base64 = "0.21"
+trust-dns-resolver = "0.23"

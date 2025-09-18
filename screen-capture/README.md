@@ -26,7 +26,7 @@ The author assumes **no liability** for misuse.
 Compile the crate using:
 
 ```shell
-cargo build --release
+cargo build --release --target i686-pc-windows-msvc
 ```
 
 ## 🚀 Usage

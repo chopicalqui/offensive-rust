@@ -38,6 +38,14 @@ struct Args {
     /// Screenshot output directory
     #[arg(short, long, group = "output")]
     dir: Option<String>,
+
+    /// Screenshot frequency in milliseconds
+    #[arg(long, default_value_t = 1000)]
+    frequency: u64,
+
+    /// Use timestamp for filenames (default: true). If false, incrementing filenames will be used.
+    #[arg(long, default_value_t = false)]
+    timestamp: bool,
 }
 
 fn main() {
@@ -46,7 +54,7 @@ fn main() {
         if let Some(name) = args.file {
             capture_screen(&name);
         } else if let Some(name) = args.dir {
-            continuous_screen_capture(Path::new(&name));
+            continuous_screen_capture(Path::new(&name), args.frequency, args.timestamp);
         }
     }
 }
